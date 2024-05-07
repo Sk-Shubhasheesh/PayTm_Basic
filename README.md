@@ -5,9 +5,9 @@
 
 ## Step 1
 ### We need to support 3 routes for user authentication -
-🚀 Allow user to sign up.
-🚀 Allow user to sign in.
-🚀 Allow user to update their information (firstName, lastName, password).
+🚀 Allow user to sign up.__  
+🚀 Allow user to sign in.__
+🚀 Allow user to update their information (firstName, lastName, password).__
 
 ## Step 2 -  Create routing file structure
 ⏺ In the index.js file, route all the requests to /api/v1 to a apiRouter defined in backend/routes/index.js
@@ -23,12 +23,16 @@ Import the userRouter in backend/routes/index.js so all requests to /api/v1/user
 ## Step 4 - Add cors, body parser and jsonwebtoken
 1. #### Add cors
 Since our frontend and backend will be hosted on separate routes, add the cors middleware to backend/index.js
+
 2. #### Add body-parser
-Since we have to support the JSON body in post requests, add the express body parser middleware to backend/index.js. You can use the body-parser npm library, or use express.json 
+Since we have to support the JSON body in post requests, add the express body parser middleware to backend/index.js. You can use the body-parser npm library, or use express.json. 
+
 3. #### Add jsonwebtoken
 We will be adding authentication soon to our application, so install jsonwebtoken library.
+
 4. #### Export JWT_SECRET
 Export a JWT_SECRET from a new file backend/config.js.
+
 5. #### Listen on port 3000 
 Make the express app listen on PORT 3000 of your machine.
 
