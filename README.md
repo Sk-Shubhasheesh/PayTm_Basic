@@ -14,28 +14,28 @@
 
 ## Step 3 - Route user requests
 1. #### Create a new user router 
-Define a new router in backend/routes/user.js and import it in the index router.
-Route all requests  that go to /api/v1/user to the user router.
+* Define a new router in backend/routes/user.js and import it in the index router.
+* Route all requests  that go to /api/v1/user to the user router.
 
 2. #### Create a new user router 
-Import the userRouter in backend/routes/index.js so all requests to /api/v1/user get routed to the userRouter.
+* Import the userRouter in backend/routes/index.js so all requests to /api/v1/user get routed to the userRouter.
 
 
 ## Step 4 - Add cors, body parser and jsonwebtoken
 1. #### Add cors
-Since our frontend and backend will be hosted on separate routes, add the cors middleware to backend/index.js
+* Since our frontend and backend will be hosted on separate routes, add the cors middleware to backend/index.js
 
 2. #### Add body-parser
-Since we have to support the JSON body in post requests, add the express body parser middleware to backend/index.js. You can use the body-parser npm library, or use express.json. 
+* Since we have to support the JSON body in post requests, add the express body parser middleware to backend/index.js. You can use the body-parser npm library, or use express.json. 
 
 3. #### Add jsonwebtoken
-We will be adding authentication soon to our application, so install jsonwebtoken library.
+* We will be adding authentication soon to our application, so install jsonwebtoken library.
 
 4. #### Export JWT_SECRET
-Export a JWT_SECRET from a new file backend/config.js.
+* Export a JWT_SECRET from a new file backend/config.js.
 
 5. #### Listen on port 3000 
-Make the express app listen on PORT 3000 of your machine.
+* Make the express app listen on PORT 3000 of your machine.
 
 
 ## Step 5 - Add backend auth routes
