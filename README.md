@@ -5,9 +5,9 @@
 
 ## Step 1
 ### We need to support 3 routes for user authentication -
-🚀 Allow user to sign up.__  
-🚀 Allow user to sign in.__
-🚀 Allow user to update their information (firstName, lastName, password).__
+🚀 Allow user to sign up. <br />
+🚀 Allow user to sign in. <br />
+🚀 Allow user to update their information (firstName, lastName, password). <br />
 
 ## Step 2 -  Create routing file structure
 ⏺ In the index.js file, route all the requests to /api/v1 to a apiRouter defined in backend/routes/index.js
@@ -49,10 +49,10 @@ This route needs to get user information, do input validation using zod and stor
 Let’s an existing user sign in to get back a token.
 
 #### Note Point
-1. Signup Route:
+1. Signup Route: <br />
 🚀 In the signup route, after a new user is successfully created in the database (User.create()), a JSON Web Token (JWT) is generated using jwt.sign(). This token typically represents the user's identity and is used for authentication purposes. After signing up, the user is immediately logged in, and the token is returned in the response. This token can then be used by the client to authenticate future requests to protected endpoints.
 
-2. Signin Route:
+2. Signin Route: <br />
 🚀 In the signin route, the purpose of jwt.sign() is different. After validating the user's credentials (username and password), if the user is found in the database, a new JWT is generated using jwt.sign(). This token is then returned to the client, indicating a successful authentication process. The client can store this token and include it in subsequent requests to authenticate themselves.
 
 So, while both routes use jwt.sign(), they serve different purposes: one is for creating a token upon signup, and the other is for creating a token upon successful authentication during signin.
@@ -60,21 +60,21 @@ So, while both routes use jwt.sign(), they serve different purposes: one is for 
 
 ## Step 6 - Middleware
 Now that we have a user account, we need to gate routes which authenticated users can hit.For this, we need to introduce an auth middleware.
-* Create a middleware.js file that  exports an authMiddleware function.
-🚀 Checks the headers for an Authorization header (Bearer <token>).
-🚀 Verifies that the token is valid.
-🚀 Puts the userId in the request object if the token checks out.
-🚀 If not, return a 403 status back to the user.
+* Create a middleware.js file that  exports an authMiddleware function. <br />
+🚀 Checks the headers for an Authorization header (Bearer <token>). <br />
+🚀 Verifies that the token is valid. <br />
+🚀 Puts the userId in the request object if the token checks out. <br />
+🚀 If not, return a 403 status back to the user. <br />
 
 
 ## Step 7 - User routes
 1. #### Route to update user information
-* User should be allowed to optionally send either or all of
-🚀 password
-🚀 firstName
-🚀 lastName
+* User should be allowed to optionally send either or all of <br />
+🚀 password <br />
+🚀 firstName <br />
+🚀 lastName <br />
 Whatever they send, we need to update it in the database for the user.
 Use the middleware we defined in the last section to authenticate the user.
 
 2. #### Route to get users from the backend, filterable via firstName/lastName
-This is needed so users can search for their friends and send them money.
+* This is needed so users can search for their friends and send them money.
