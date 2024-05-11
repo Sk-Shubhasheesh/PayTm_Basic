@@ -128,3 +128,6 @@ transferFunds('fromAccountID', 'toAccountID', 100);
 ## Step 10 - Initialize balances on signup
 * Update the signup endpoint to give the user a random balance between 1 and 10000.
 This is so we don’t have to integrate with banks and give them random balances to start with.
+
+## Step 11 - Create a new router for accounts
+* Here we crate the nrew route fot the account.
