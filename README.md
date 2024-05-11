@@ -98,3 +98,33 @@ you store 3333 in the database).
 * There is a certain precision that you need to support (which for india is
 2/4 decimal places) and this allows you to get rid of precision
 errors by storing integers in your DB
+
+
+## Step 9 - Transactions in databases
+* A lot of times, you want multiple databases transactions to be atomic Either all of them should update, or none should.
+* This is super important in the case of a bank.
+* Can you guess what’s wrong with the following code - 
+```.js
+const mongoose = require('mongoose');
+const Account = require('./path-to-your-account-model');
+
+const transferFunds = async (fromAccountId, toAccountId, amount) => {
+    // Decrement the balance of the fromAccount
+	  await Account.findByIdAndUpdate(fromAccountId, { $inc: { balance: -amount } });
+
+    // Increment the balance of the toAccount
+    await Account.findByIdAndUpdate(toAccountId, { $inc: { balance: amount } });
+}
+
+// Example usage
+transferFunds('fromAccountID', 'toAccountID', 100);
+```
+1. What if the database crashes right after the first request (only the balance is decreased for one user, and not for the second user)
+2. What if the Node.js crashes after the first update?
+   - It would lead to a database inconsistency. Amount would get debited from the first user, and not credited into the other users account.
+   - If a failure ever happens, the first txn should rollback.
+   - This is what is called a transaction in a database. We need to implement a transaction on the next set of endpoints that allow users to transfer INR.
+
+## Step 10 - Initialize balances on signup
+* Update the signup endpoint to give the user a random balance between 1 and 10000.
+This is so we don’t have to integrate with banks and give them random balances to start with.
