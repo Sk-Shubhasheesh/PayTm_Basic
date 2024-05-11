@@ -131,3 +131,9 @@ This is so we don’t have to integrate with banks and give them random balances
 
 ## Step 11 - Create a new router for accounts
 * Here we crate the nrew route fot the account.
+
+## Step 12 - Balance and transfer Endpoints
+- Here, you’ll be writing a bunch of APIs for the core user balances. There are 2 endpoints that we need to implement.
+ 1. An endpoint for user to get their balance.
+ 2. An endpoint for user to transfer money to another account.
+
