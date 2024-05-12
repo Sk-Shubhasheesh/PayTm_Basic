@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/paytm");
+mongoose.connect("mongodb://0.0.0.0:27017/paytm");
 
 
 // Create a Schema for Users
