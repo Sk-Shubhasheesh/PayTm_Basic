@@ -2,7 +2,7 @@
 ### We’re building a PayTM like application that let’s users send money to each other given an initial dummy balance.
 
 ![alt text](<Markdown file/Screenshot (711).png>)
-
+# Backend Steps 🚀 ✈
 ## Step 1
 ### We need to support 3 routes for user authentication -
 🚀 Allow user to sign up. <br />
@@ -137,3 +137,16 @@ This is so we don’t have to integrate with banks and give them random balances
  1. An endpoint for user to get their balance.
  2. An endpoint for user to transfer money to another account.
 
+
+
+
+
+# Frontend Steps 🚀 ✈
+
+## Step 1 - Add routing to the react app
+* Import react-router-dom into your project and add the following routes - 
+1. /signup - The signup page
+2. /signin - The signin page
+3. /dashboard - Balances and see other users on the platform.
+4. /send - Send money to other users
+ 
